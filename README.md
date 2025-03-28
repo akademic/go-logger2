@@ -239,7 +239,7 @@ func main() {
         },
     })
 
-    multiLogger := logger.NewMultiLogger(fileLogger, stdoutLogger)
+    multiLogger := logger.NewMultiLogger(fileLogger, stdoutLogger, lokiLogger)
 
     // Create a logger
     l := logger.New(multiLogger, "", &logger.Config{
