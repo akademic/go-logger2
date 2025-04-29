@@ -22,7 +22,7 @@ func New(baseLogger BaseLogger, component string, config *Config) *LoggerImpl {
 	}
 }
 
-func (l *LoggerImpl) WithComponent(component string) *LoggerImpl {
+func (l *LoggerImpl) WithComponent(component string) Logger {
 	return &LoggerImpl{
 		config:     l.config,
 		component:  component,
