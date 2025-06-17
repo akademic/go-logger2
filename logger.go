@@ -15,6 +15,11 @@ type LoggerImpl struct {
 }
 
 func New(baseLogger BaseLogger, component string, config *Config) *LoggerImpl {
+	if config == nil {
+		defaultConfig := DefaultConfig()
+		config = &defaultConfig
+	}
+
 	return &LoggerImpl{
 		config:     config,
 		component:  component,
